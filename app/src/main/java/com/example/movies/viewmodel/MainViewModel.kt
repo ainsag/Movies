@@ -11,16 +11,16 @@ class MainViewModel  (private var repository: AuthRepository): ViewModel(){
     var firebaseSignUp: MutableLiveData<FirebaseUser> = MutableLiveData()
     var firebaseSignIn: MutableLiveData<FirebaseUser> = MutableLiveData()
 
-    fun registerUserInFirebase(email:String , password:String){
+    fun registerUserInFirebase(email:String , password:String , repassword : String , name : String , surname : String){
         viewModelScope.launch {
-            repository.registerUser(email , password)
+            repository.registerUser(email , password , repassword , name , surname)
             firebaseSignUp =  repository.firebaseSignUpUser
         }
     }
 
-    fun loginUserInFirebase(email:String , password : String , repassword : String , name : String , surname : String){
+    fun loginUserInFirebase(email:String , password : String){
         viewModelScope.launch {
-            repository.loginUser(email , password , repassword , name , surname)
+            repository.loginUser(email , password)
             firebaseSignIn = repository.firebaseSignInUser
         }
     }

@@ -11,7 +11,7 @@ class AuthRepository {
     var firebaseSignUpUser: MutableLiveData<FirebaseUser> = MutableLiveData()
     var firebaseSignInUser: MutableLiveData<FirebaseUser> = MutableLiveData()
 
-    fun registerUser(email:String ,password:String, repassword: String, name: String, surname: String){
+    fun registerUser(email:String ,password:String, name:String, surname: String){
         auth = FirebaseAuth.getInstance()
         auth.createUserWithEmailAndPassword(email , password).addOnCompleteListener{
             if(it.isSuccessful){

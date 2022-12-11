@@ -23,7 +23,7 @@ class AuthRepository {
         }
     }
 
-    fun loginUser(email: String , password: String){
+    fun loginUser(email: String , password: String, repassword: String, name: String, surname: String){
         auth = FirebaseAuth.getInstance()
         auth.signInWithEmailAndPassword(email , password).addOnCompleteListener {
             if (it.isSuccessful)

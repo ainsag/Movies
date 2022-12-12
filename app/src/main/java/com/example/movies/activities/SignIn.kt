@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.movies.R
 import com.example.movies.databinding.ActivitySignInBinding
 import com.example.movies.repository.AuthRepository
 import com.example.movies.viewmodel.MainViewModel
@@ -21,8 +20,7 @@ class SignIn : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        firebaseViewModel = ViewModelProvider(
-            this,
+        firebaseViewModel = ViewModelProvider(this,
             MainViewModelFactory(AuthRepository())
         )[MainViewModel::class.java]
 

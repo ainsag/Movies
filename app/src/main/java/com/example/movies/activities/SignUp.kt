@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.movies.R
 import com.example.movies.databinding.ActivitySignUpBinding
 import com.example.movies.repository.AuthRepository
 import com.example.movies.viewmodel.MainViewModel
